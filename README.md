@@ -71,20 +71,20 @@ int main() {
     setupOLED();
     serial.write(mensaje_inicio, strlen(mensaje_inicio));
     
-    while (true) {
+ while (true) {
         float Vin = 0.0;
         int ent = 0, dec = 0;
 
-        // Lectura del voltaje y despliegue
+ // Lectura del voltaje y despliegue
         obtenerVoltaje(Vin, ent, dec);
         mostrarEnOLED();
         mostrarEnSerial();
 
-        // Lectura de la temperatura y despliegue
+ // Lectura de la temperatura y despliegue
         obtenerTemperatura(ent, dec);
         mostrarEnOLED();
         mostrarEnSerial();
 
-        ThisThread::sleep_for(tiempo_muestreo);
+ThisThread::sleep_for(tiempo_muestreo);
     }
 }
